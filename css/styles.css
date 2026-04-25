@@ -1,0 +1,877 @@
+/* ============================================================
+   DELENCANTO – GOOOLAZO MUNDIAL
+   styles.css
+   ============================================================ */
+
+/* ── Google Fonts ─────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;700&family=Onest:wght@100;400;700&display=swap');
+
+/* ── Custom font (AkiraExpanded – drop files here when ready) */
+/* @font-face {
+  font-family: 'AkiraExpanded';
+  src: url('../assets/fonts/AkiraExpanded-SuperBold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+} */
+
+/* ── CSS Variables ────────────────────────────────────────── */
+:root {
+  --green-dark:   #0d3b14;
+  --green-mid:    #1a5c24;
+  --green-light:  #2d7a3a;
+  --yellow:       #ffd700;
+  --yellow-dark:  #e6b800;
+  --amber:        #f0a500;
+  --amber-light:  #f5bc2f;
+  --white:        #ffffff;
+  --gray-light:   #f2f2f2;
+  --gray-text:    #444444;
+
+  --font-display: 'Bebas Neue', 'AkiraExpanded', sans-serif;
+  --font-heading: 'DM Sans', sans-serif;
+  --font-body:    'Onest', 'DM Sans', sans-serif;
+
+  --radius:       12px;
+  --radius-lg:    20px;
+  --shadow:       0 4px 20px rgba(0,0,0,0.15);
+  --transition:   0.3s ease;
+}
+
+/* ── Reset ────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  color: var(--gray-text);
+  background: var(--white);
+  overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* ============================================================
+   HEADER / NAV
+   ============================================================ */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--green-dark);
+  border-bottom: 2px solid var(--yellow);
+}
+
+.header-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Nav links */
+.nav-links {
+  display: flex;
+  gap: 36px;
+  align-items: center;
+}
+
+.nav-links a {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--white);
+  padding: 4px 0;
+  border-bottom: 2px solid transparent;
+  transition: color var(--transition), border-color var(--transition);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--yellow);
+  border-bottom-color: var(--yellow);
+}
+
+/* Logo */
+.header-logo img {
+  height: 44px;
+  width: auto;
+}
+.header-logo .logo-placeholder {
+  height: 44px;
+  width: 130px;
+  background: var(--yellow);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--green-dark);
+  letter-spacing: 0.04em;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.hamburger span {
+  display: block;
+  width: 26px;
+  height: 3px;
+  background: var(--white);
+  border-radius: 2px;
+  transition: transform var(--transition), opacity var(--transition);
+}
+.hamburger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+/* Mobile nav */
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  background: var(--green-dark);
+  border-top: 1px solid var(--green-mid);
+  padding: 16px 24px 24px;
+  gap: 20px;
+}
+.mobile-nav a {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--white);
+  transition: color var(--transition);
+}
+.mobile-nav a:hover { color: var(--yellow); }
+.mobile-nav.open { display: flex; }
+
+/* ============================================================
+   SECTION TITLE BADGE
+   ============================================================ */
+.section-title-wrap {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.section-badge {
+  display: inline-block;
+  background: var(--green-dark);
+  border: 3px solid var(--yellow);
+  border-radius: 8px;
+  padding: 10px 40px;
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  letter-spacing: 0.05em;
+  color: var(--yellow);
+  text-transform: uppercase;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--gray-text);
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+
+/* ============================================================
+   HERO SECTION
+   ============================================================ */
+.hero {
+  position: relative;
+  background: var(--green-dark);
+  min-height: 580px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+/* Stadium background image layer */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('../assets/images/hero-bg.jpg');
+  background-size: cover;
+  background-position: center top;
+  opacity: 0.45;
+  z-index: 0;
+}
+/* Fallback tint when image not available */
+.hero-bg-fallback {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #0a2e0f 0%, #1a5c24 50%, #0a2e0f 100%);
+  z-index: 0;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 60px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  width: 100%;
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 520px;
+}
+
+.hero-logo-gooolazo {
+  width: 340px;
+  max-width: 100%;
+  margin-bottom: 16px;
+}
+/* Placeholder for GOooLAZO logo */
+.hero-logo-gooolazo-placeholder {
+  width: 340px;
+  max-width: 100%;
+  height: 120px;
+  background: var(--yellow);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.hero-logo-gooolazo-placeholder span {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  color: var(--green-dark);
+  letter-spacing: 0.04em;
+}
+
+.hero-delencanto-logo {
+  width: 140px;
+  margin-bottom: 24px;
+}
+
+.hero-tagline {
+  background: var(--yellow);
+  color: var(--green-dark);
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  padding: 14px 24px;
+  border-radius: var(--radius);
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+/* Hero product image (right side) */
+.hero-products {
+  flex: 1;
+  max-width: 520px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero-products img {
+  width: 100%;
+  max-width: 480px;
+  filter: drop-shadow(0 10px 30px rgba(0,0,0,0.5));
+}
+/* Placeholder for hero product cutout */
+.hero-products-placeholder {
+  width: 400px;
+  height: 380px;
+  max-width: 100%;
+  background: rgba(255,215,0,0.1);
+  border: 2px dashed rgba(255,215,0,0.3);
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.4);
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Grass strip divider */
+.grass-divider {
+  width: 100%;
+  height: 60px;
+  background-image: url('../assets/images/grass-strip.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* Fallback when image not available */
+.grass-divider-fallback {
+  width: 100%;
+  height: 24px;
+  background: linear-gradient(180deg, var(--green-light) 0%, var(--green-mid) 100%);
+}
+
+/* Paint brush stroke decorators (positioned absolutely in sections) */
+.brush-stroke {
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ============================================================
+   MECÁNICA SECTION
+   ============================================================ */
+.mecanica {
+  position: relative;
+  background-color: var(--white);
+  /* Optional: stadium background at low opacity */
+  background-image: url('../assets/images/mecanica-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 70px 0 80px;
+  overflow: hidden;
+}
+.mecanica::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.88);
+  z-index: 0;
+}
+
+.mecanica .section-title-wrap,
+.mecanica .section-subtitle,
+.mecanica-carousel-wrapper { position: relative; z-index: 1; }
+
+/* Cards container */
+.mecanica-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Step card */
+.step-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  border: 3px solid var(--green-dark);
+  overflow: visible;
+  position: relative;
+  padding-top: 30px;
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.step-number {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 46px;
+  height: 46px;
+  background: var(--yellow);
+  border: 3px solid var(--green-dark);
+  border-radius: 50%;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--green-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.step-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 0;
+}
+.step-image-placeholder {
+  width: 100%;
+  height: 180px;
+  background: #c8e6c9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  font-size: 0.8rem;
+}
+
+.step-content {
+  padding: 16px 16px 20px;
+}
+.step-title {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--green-dark);
+  margin-bottom: 8px;
+  text-align: center;
+}
+.step-desc {
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--gray-text);
+  text-align: center;
+}
+
+/* ============================================================
+   PREMIOS SECTION
+   ============================================================ */
+.premios {
+  position: relative;
+  background-color: var(--amber);
+  background-image: url('../assets/images/premios-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 70px 0 90px;
+  overflow: hidden;
+}
+.premios::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(240,165,0,0.82);
+  z-index: 0;
+}
+
+.premios .section-title-wrap,
+.premios .section-subtitle,
+.premios-grid-wrapper { position: relative; z-index: 1; }
+
+.premios .section-subtitle { color: var(--green-dark); font-weight: 700; }
+
+/* Soccer field corner marks (decorative) */
+.field-deco {
+  position: absolute;
+  z-index: 0;
+  opacity: 0.18;
+  pointer-events: none;
+}
+.field-deco-left  { left: 0; top: 50%; transform: translateY(-50%); width: 140px; }
+.field-deco-right { right: 0; top: 50%; transform: translateY(-50%); width: 140px; transform: translateY(-50%) scaleX(-1); }
+
+/* Prize grid */
+.premios-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.prize-card {
+  background: rgba(255,255,255,0.15);
+  border-radius: var(--radius-lg);
+  border: 2px solid rgba(255,255,255,0.35);
+  overflow: hidden;
+  text-align: center;
+  transition: transform var(--transition), box-shadow var(--transition);
+  cursor: default;
+}
+.prize-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.2);
+}
+
+.prize-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.prize-image-placeholder {
+  width: 100%;
+  height: 180px;
+  background: rgba(255,255,255,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--green-dark);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.prize-name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--green-dark);
+  padding: 12px 12px 16px;
+  text-align: center;
+}
+
+/* ============================================================
+   GANADORES SECTION
+   ============================================================ */
+.ganadores {
+  position: relative;
+  background: var(--white);
+  padding: 70px 0 80px;
+  overflow: hidden;
+}
+
+.ganadores.hidden { display: none; }
+
+.ganadores-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 1;
+}
+
+/* 3-column winners grid */
+.winners-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px 24px;
+}
+
+.winner-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--gray-light);
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-size: 0.88rem;
+}
+.winner-name { font-weight: 700; color: var(--green-dark); }
+.winner-city {
+  background: var(--green-dark);
+  color: var(--white);
+  border-radius: 4px;
+  padding: 3px 10px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* ============================================================
+   CAROUSEL (shared)
+   ============================================================ */
+.carousel-wrapper {
+  position: relative;
+}
+
+.carousel-track-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.4s ease;
+  will-change: transform;
+}
+
+.carousel-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  padding: 0 12px;
+}
+
+/* Arrow buttons */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--green-dark);
+  border: 2px solid var(--yellow);
+  color: var(--yellow);
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: background var(--transition), color var(--transition);
+}
+.carousel-btn:hover { background: var(--yellow); color: var(--green-dark); }
+.carousel-btn.prev { left: 0; }
+.carousel-btn.next { right: 0; }
+
+/* Dots */
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 20px;
+}
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ccc;
+  border: none;
+  cursor: pointer;
+  transition: background var(--transition), transform var(--transition);
+}
+.carousel-dot.active {
+  background: var(--green-dark);
+  transform: scale(1.3);
+}
+/* On amber background (Premios) */
+.premios .carousel-dot { background: rgba(255,255,255,0.4); }
+.premios .carousel-dot.active { background: var(--green-dark); }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer {
+  background: var(--green-dark);
+  border-top: 3px solid var(--yellow);
+  padding: 40px 24px 30px;
+}
+
+.footer-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Left: Contacto */
+.footer-contact h3 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--yellow);
+  margin-bottom: 12px;
+  letter-spacing: 0.04em;
+}
+.footer-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--white);
+  font-size: 0.88rem;
+  margin-bottom: 6px;
+  transition: color var(--transition);
+}
+.footer-contact-item:hover { color: var(--yellow); }
+.footer-contact-item svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  fill: var(--yellow);
+}
+
+/* Center: Logos */
+.footer-logos {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+.footer-logo-gooolazo {
+  width: 160px;
+}
+.footer-logo-gooolazo-placeholder {
+  width: 160px;
+  height: 56px;
+  background: var(--yellow);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--green-dark);
+}
+.footer-logo-delencanto {
+  width: 100px;
+}
+.footer-logo-delencanto-placeholder {
+  width: 100px;
+  height: 36px;
+  background: rgba(255,215,0,0.2);
+  border: 1px solid var(--yellow);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  color: var(--yellow);
+}
+
+/* Right: Social */
+.footer-social {
+  text-align: right;
+}
+.footer-social p {
+  color: var(--white);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+}
+.social-icons {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+.social-icon {
+  width: 36px;
+  height: 36px;
+  background: var(--yellow);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background var(--transition), transform var(--transition);
+}
+.social-icon:hover { background: var(--white); transform: scale(1.1); }
+.social-icon svg { width: 18px; height: 18px; fill: var(--green-dark); }
+
+.footer-bottom {
+  max-width: 1280px;
+  margin: 24px auto 0;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  text-align: center;
+  color: rgba(255,255,255,0.4);
+  font-size: 0.75rem;
+}
+
+/* ============================================================
+   TÉRMINOS PAGE
+   ============================================================ */
+.terminos-content {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 60px 24px 80px;
+}
+.terminos-content h1 {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  color: var(--green-dark);
+  letter-spacing: 0.04em;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+}
+.terminos-content h2 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--green-dark);
+  margin: 28px 0 8px;
+}
+.terminos-content p {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--gray-text);
+  margin-bottom: 12px;
+}
+
+/* ============================================================
+   BRUSH STROKE DIVIDERS
+   (decorative yellow/green paint strokes between sections)
+   ============================================================ */
+.brush-divider {
+  width: 100%;
+  height: 60px;
+  position: relative;
+  overflow: hidden;
+  line-height: 0;
+}
+.brush-divider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+/* CSS fallback when image not yet available */
+.brush-divider-down {
+  background: linear-gradient(180deg, var(--green-dark) 0%, var(--white) 100%);
+}
+.brush-divider-up {
+  background: linear-gradient(180deg, var(--white) 0%, var(--amber) 100%);
+}
+.brush-divider-amber-to-white {
+  background: linear-gradient(180deg, var(--amber) 0%, var(--white) 100%);
+}
+.brush-divider-white-to-green {
+  background: linear-gradient(180deg, var(--white) 0%, var(--green-dark) 100%);
+}
+
+/* ============================================================
+   RESPONSIVE – MOBILE (max 768px)
+   ============================================================ */
+@media (max-width: 768px) {
+
+  /* Header */
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .header-logo .logo-placeholder { width: 100px; font-size: 0.8rem; }
+
+  /* Hero */
+  .hero-inner {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 20px 50px;
+  }
+  .hero-content { max-width: 100%; }
+  .hero-logo-gooolazo,
+  .hero-logo-gooolazo-placeholder { width: 260px; margin: 0 auto 16px; }
+  .hero-products { max-width: 90%; }
+  .hero-tagline { font-size: 1.1rem; }
+
+  /* Section badge */
+  .section-badge { font-size: 1.7rem; padding: 8px 24px; }
+
+  /* Mecánica – hide grid, show carousel */
+  .mecanica-cards { display: none; }
+
+  /* Premios – hide grid, show carousel */
+  .premios-grid { display: none; }
+
+  /* Ganadores winners-grid → handled in JS carousel */
+  .winners-grid { display: none; }
+
+  /* Footer */
+  .footer-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .footer-social { text-align: center; }
+  .social-icons { justify-content: center; }
+  .footer-contact-item { justify-content: center; }
+}
+
+/* ============================================================
+   RESPONSIVE – DESKTOP (min 769px)
+   ============================================================ */
+@media (min-width: 769px) {
+  /* Hide mobile carousels on desktop */
+  .mecanica-carousel-wrapper { display: none; }
+  .premios-carousel-wrapper  { display: none; }
+  .ganadores-carousel-wrapper { display: none; }
+  /* Show desktop winners grid */
+  .winners-grid { display: grid; }
+}
