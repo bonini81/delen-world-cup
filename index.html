@@ -7,7 +7,7 @@
   <title>GOooLAZO – Delencanto Foods</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;700&family=Onest:wght@100;400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100;300;400;500;700;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
@@ -31,9 +31,7 @@
 
       <!-- Logo -->
       <div class="header-logo">
-        <!-- Replace img src when logo file is ready -->
-        <!-- <img src="assets/images/logo-delencanto.png" alt="Delencanto Foods" /> -->
-        <div class="logo-placeholder" aria-label="Delencanto Foods">Delencanto</div>
+       <img src="assets/images/logo-delencanto.png" alt="Delencanto Foods" /> 
       </div>
 
       <!-- Hamburger (mobile) -->
@@ -56,44 +54,18 @@
 
   <!-- ══════════════════════════════════════════════════════
        HERO
+       Desktop image : assets/images/hero-desktop.jpg
+       Mobile image  : assets/images/hero-mobile.jpg
   ══════════════════════════════════════════════════════ -->
-  <section class="hero" id="hero" aria-label="Hero GOooLAZO">
-    <!-- Background layers -->
-    <div class="hero-bg-fallback"></div>
-    <!-- Uncomment when hero-bg.jpg is available:
-    <div class="hero-bg"></div>
-    -->
-
-    <div class="hero-inner">
-      <!-- Left: Text / logos -->
-      <div class="hero-content">
-
-        <!-- GOooLAZO big logo -->
-        <!-- <img class="hero-logo-gooolazo" src="assets/images/logo-gooolazo.png" alt="GOooLAZO" /> -->
-        <div class="hero-logo-gooolazo-placeholder" aria-label="GOooLAZO">
-          <span>GOooLAZO</span>
-        </div>
-
-        <!-- Delencanto Foods logo -->
-        <!-- <img class="hero-delencanto-logo" src="assets/images/logo-delencanto.png" alt="Delencanto Foods" /> -->
-
-        <!-- Tagline banner -->
-        <div class="hero-tagline">
-          Busca el Balón Dorado<br />
-          dentro de cualquier empaque<br />
-          <strong>y Gana</strong>
-        </div>
-
-      </div>
-
-      <!-- Right: Product imagery -->
-      <div class="hero-products">
-        <!-- <img src="assets/images/hero-products.png" alt="Productos Delencanto con el Balón Dorado" /> -->
-        <div class="hero-products-placeholder">
-          Imagen productos<br />(hero-products.png)
-        </div>
-      </div>
-    </div>
+  <section class="hero" id="hero" aria-label="GOooLAZO – Busca el Balón Dorado en cualquier empaque Delencanto y Gana">
+    <picture>
+      <source media="(max-width: 768px)" srcset="assets/images/heroMobile.jpg" />
+      <img
+        class="hero-img"
+        src="assets/images/hero1Desktop.jpg"
+        alt="GOooLAZO – Busca el Balón Dorado dentro de cualquier empaque Delencanto y Gana"
+      />
+    </picture>
   </section>
 
 
