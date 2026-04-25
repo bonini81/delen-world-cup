@@ -22,13 +22,16 @@
   --dark-blue:    #081126;
   --green-mid:    #038F3C;
   --green-light:  #038F3C;
-  --yellow:       #F0CD13; 
-  --yellow-dark:  #e6b800;
+  --yellow:       #FFE900; 
+  --yellow-mid: #F0CD13;
+  --yellow-dark:  #e6b800; 
   --amber:        #f0a500;
   --amber-light:  #f5bc2f;
   --white:        #ffffff;
   --gray-light:   #f2f2f2;
   --gray-text:    #444444;
+  --white:   #ffffff;
+  --black:  #000000;
 
   --font-display: 'Onest', sans-serif;
   --font-heading: 'Onest', sans-serif;
@@ -144,7 +147,6 @@ ul { list-style: none; }
   display: none;
   flex-direction: column;
   background: var(--dark-blue);
-  border-top: 1px solid var(--green-mid);
   padding: 16px 24px 24px;
   gap: 20px;
 }
@@ -170,7 +172,7 @@ ul { list-style: none; }
 
 .section-badge {
   display: inline-block;
-  background: var(--green-dark);
+  background: transparent;
   border: 3px solid var(--yellow);
   border-radius: 8px;
   padding: 10px 40px;
@@ -184,10 +186,10 @@ ul { list-style: none; }
 .section-subtitle {
   text-align: center;
   font-family: var(--font-body);
-  font-size: 1rem;
-  color: var(--gray-text);
-  margin-top: 10px;
-  margin-bottom: 40px;
+  font-size: 1.5rem;
+  color: var(--white);
+  margin-top: 20px;
+  margin-bottom: 50px;
 }
 
 /* ============================================================
@@ -249,27 +251,28 @@ ul { list-style: none; }
 .step-card {
   background: var(--white);
   border-radius: var(--radius-lg);
-  border: 3px solid var(--green-dark);
+  border: 12px solid var(--green-light);
   overflow: visible;
   position: relative;
-  padding-top: 30px;
+  padding-top: 0px;
   box-shadow: var(--shadow);
   text-align: center;
 }
 
 .step-number {
   position: absolute;
-  top: -20px;
+  top: -40px;
   left: 50%;
   transform: translateX(-50%);
-  width: 46px;
-  height: 46px;
-  background: var(--yellow);
-  border: 3px solid var(--green-dark);
+  width: 60px;
+  height: 60px;
+  background: var(--yellow-mid);
+  border: 6px solid var(--white);
   border-radius: 50%;
   font-family: var(--font-display);
-  font-size: 1.3rem;
-  color: var(--green-dark);
+  font-size: 1.5rem;
+  color: var(--black);
+  font-weight: bolder;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -278,14 +281,15 @@ ul { list-style: none; }
 
 .step-image {
   width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 0;
+  height: 200px;
+  object-fit: fill;
+  background-color: #038F3C;
 }
 .step-image-placeholder {
   width: 100%;
   height: 180px;
-  background: #c8e6c9;
+  border-radius: 12px 12px 0 0;
+  background-color: #038F3C;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -300,9 +304,12 @@ ul { list-style: none; }
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: 1rem;
-  color: var(--green-dark);
+  color: var(--white);
   margin-bottom: 8px;
   text-align: center;
+  background: var(--green-light);
+  border-radius: 25px;
+  padding: 10px;
 }
 .step-desc {
   font-size: 0.82rem;
@@ -452,7 +459,8 @@ ul { list-style: none; }
 }
 
 .carousel-track-container {
-  overflow: hidden;
+ /* overflow: hidden;  Changed it due to step number not working the negative values */
+  overflow: unset; 
   width: 100%;
 }
 
