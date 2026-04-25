@@ -20,8 +20,8 @@
 :root {
   --green-dark:   #0d3b14;
   --dark-blue:    #081126;
-  --green-mid:    #1a5c24;
-  --green-light:  #2d7a3a;
+  --green-mid:    #038F3C;
+  --green-light:  #038F3C;
   --yellow:       #F0CD13; 
   --yellow-dark:  #e6b800;
   --amber:        #f0a500;
@@ -223,19 +223,13 @@ ul { list-style: none; }
   position: relative;
   background-color: var(--white);
   /* Optional: stadium background at low opacity */
-  background-image: url('../assets/images/mecanica-bg.jpg');
+  background-image: url('../assets/images/fondoMecanicaPC.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: top center;
   padding: 70px 0 80px;
   overflow: hidden;
 }
-.mecanica::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(255,255,255,0.88);
-  z-index: 0;
-}
+
 
 .mecanica .section-title-wrap,
 .mecanica .section-subtitle,
@@ -408,7 +402,7 @@ ul { list-style: none; }
    ============================================================ */
 .ganadores {
   position: relative;
-  background: var(--white);
+  background: var(--dark-blue);
   padding: 70px 0 80px;
   overflow: hidden;
 }
@@ -525,8 +519,7 @@ ul { list-style: none; }
    FOOTER
    ============================================================ */
 .site-footer {
-  background: var(--green-dark);
-  border-top: 3px solid var(--yellow);
+  background: var(--green-light);
   padding: 40px 24px 30px;
 }
 
@@ -588,11 +581,11 @@ ul { list-style: none; }
   color: var(--green-dark);
 }
 .footer-logo-delencanto {
-  width: 100px;
+  width: 200px;
 }
 .footer-logo-delencanto-placeholder {
-  width: 100px;
-  height: 36px;
+  width: 200px;
+  height: 89px;
   background: rgba(255,215,0,0.2);
   border: 1px solid var(--yellow);
   border-radius: 6px;
