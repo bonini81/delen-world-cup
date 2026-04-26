@@ -27,6 +27,7 @@
   --yellow-dark:  #e6b800; 
   --amber:        #f0a500;
   --amber-light:  #f5bc2f;
+  --dark-blue:    #081025;
   --white:        #ffffff;
   --gray-light:   #f2f2f2;
   --gray-text:    #444444;
@@ -173,15 +174,32 @@ ul { list-style: none; }
 .section-badge {
   display: inline-block;
   background: transparent;
-  border: 3px solid var(--yellow);
-  border-radius: 8px;
+  border: 5px solid var(--yellow);
+  border-radius: 12px;
   padding: 10px 40px;
   font-family: var(--font-display);
-  font-size: 2.4rem;
+  font-size: 2.8rem;
   letter-spacing: 0.05em;
-  color: var(--yellow);
+    color: var(--yellow);
   text-transform: uppercase;
+  box-shadow: 2px 2px 2px 2px rgba(252, 251, 251, 0.2), 2px 2px 2px 2px rgba(241, 237, 237, 0.19);
 }
+
+.section-badge--premios {
+  display: inline-block;
+  background: transparent;
+  border: 5px solid var(--white);
+  border-radius: 12px;
+  padding: 10px 40px;
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+  letter-spacing: 0.05em;
+  font-weight: bolder;
+  color: var(--black);
+  text-transform: uppercase;
+    box-shadow: 2px 2px 2px 2px rgba(252, 251, 251, 0.2), 2px 2px 2px 2px rgba(241, 237, 237, 0.19);
+}
+
 
 .section-subtitle {
   text-align: center;
@@ -342,7 +360,7 @@ ul { list-style: none; }
 .premios .section-subtitle,
 .premios-grid-wrapper { position: relative; z-index: 1; }
 
-.premios .section-subtitle { color: var(--green-dark); font-weight: 700; }
+.premios .section-subtitle { color: var(--dark-blue); font-weight: 700; }
 
 /* Soccer field corner marks (decorative) */
 .field-deco {
@@ -398,7 +416,7 @@ ul { list-style: none; }
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: 0.95rem;
-  color: var(--green-dark);
+  color: var(--dark-blue);
   padding: 12px 12px 16px;
   text-align: center;
 }
@@ -728,6 +746,8 @@ ul { list-style: none; }
 
   /* Section badge */
   .section-badge { font-size: 1.7rem; padding: 8px 24px; }
+
+  .section-badge--premios { font-size: 1.7rem; padding: 8px 24px; }
 
   /* Mecánica – hide grid, show carousel */
   .mecanica-cards { display: none; }
