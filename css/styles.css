@@ -281,7 +281,7 @@ ul { list-style: none; }
 
 .step-image {
   width: 100%;
-  height: 200px;
+  height: 250px;
   object-fit: fill;
   background-color: #038F3C;
 }
@@ -365,9 +365,8 @@ ul { list-style: none; }
 }
 
 .prize-card {
-  background: rgba(255,255,255,0.15);
+  background: transparent;
   border-radius: var(--radius-lg);
-  border: 2px solid rgba(255,255,255,0.35);
   overflow: hidden;
   text-align: center;
   transition: transform var(--transition), box-shadow var(--transition);
