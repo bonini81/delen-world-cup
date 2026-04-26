@@ -4,7 +4,7 @@
    ============================================================ */
 
 /* ── Google Fonts ─────────────────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@400;700&family=Onest:wght@100;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@100;300;400;500;700;900&display=swap');
 
 /* ── Custom font (AkiraExpanded – drop files here when ready) */
 /* @font-face {
@@ -13,23 +13,29 @@
   font-weight: 800;
   font-style: normal;
 } */
+/* NOTE: Only Onest is used. If AkiraExpanded is provided later,
+   update --font-display below to include it. */
 
 /* ── CSS Variables ────────────────────────────────────────── */
 :root {
   --green-dark:   #0d3b14;
-  --green-mid:    #1a5c24;
-  --green-light:  #2d7a3a;
-  --yellow:       #ffd700;
-  --yellow-dark:  #e6b800;
+  --dark-blue:    #081126;
+  --green-mid:    #038F3C;
+  --green-light:  #038F3C;
+  --yellow:       #FFE900; 
+  --yellow-mid: #F0CD13;
+  --yellow-dark:  #e6b800; 
   --amber:        #f0a500;
   --amber-light:  #f5bc2f;
   --white:        #ffffff;
   --gray-light:   #f2f2f2;
   --gray-text:    #444444;
+  --white:   #ffffff;
+  --black:  #000000;
 
-  --font-display: 'Bebas Neue', 'AkiraExpanded', sans-serif;
-  --font-heading: 'DM Sans', sans-serif;
-  --font-body:    'Onest', 'DM Sans', sans-serif;
+  --font-display: 'Onest', sans-serif;
+  --font-heading: 'Onest', sans-serif;
+  --font-body:    'Onest', sans-serif;
 
   --radius:       12px;
   --radius-lg:    20px;
@@ -57,8 +63,7 @@ ul { list-style: none; }
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: var(--green-dark);
-  border-bottom: 2px solid var(--yellow);
+  background: var(--dark-blue);
 }
 
 .header-inner {
@@ -80,7 +85,7 @@ ul { list-style: none; }
 
 .nav-links a {
   font-family: var(--font-body);
-  font-weight: 700;
+  font-weight: 500;
   font-size: 0.85rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -129,7 +134,7 @@ ul { list-style: none; }
   display: block;
   width: 26px;
   height: 3px;
-  background: var(--white);
+  background: var(--yellow);
   border-radius: 2px;
   transition: transform var(--transition), opacity var(--transition);
 }
@@ -141,8 +146,7 @@ ul { list-style: none; }
 .mobile-nav {
   display: none;
   flex-direction: column;
-  background: var(--green-dark);
-  border-top: 1px solid var(--green-mid);
+  background: var(--dark-blue);
   padding: 16px 24px 24px;
   gap: 20px;
 }
@@ -168,7 +172,7 @@ ul { list-style: none; }
 
 .section-badge {
   display: inline-block;
-  background: var(--green-dark);
+  background: transparent;
   border: 3px solid var(--yellow);
   border-radius: 8px;
   padding: 10px 40px;
@@ -182,154 +186,36 @@ ul { list-style: none; }
 .section-subtitle {
   text-align: center;
   font-family: var(--font-body);
-  font-size: 1rem;
-  color: var(--gray-text);
-  margin-top: 10px;
-  margin-bottom: 40px;
+  font-size: 1.5rem;
+  color: var(--white);
+  margin-top: 20px;
+  margin-bottom: 50px;
 }
 
 /* ============================================================
    HERO SECTION
+   Desktop: assets/images/hero-desktop.jpg
+   Mobile:  assets/images/hero-mobile.jpg
    ============================================================ */
 .hero {
-  position: relative;
-  background: var(--green-dark);
-  min-height: 580px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
+  display: block;
+  /* Dark green fallback shown while image loads or is missing */
+  background-color: var(--green-dark);
+  /* Minimum height so layout doesn't collapse before images arrive */
+  min-height: 480px;
+  line-height: 0;
 }
 
-/* Stadium background image layer */
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  background-image: url('../assets/images/hero-bg.jpg');
-  background-size: cover;
-  background-position: center top;
-  opacity: 0.45;
-  z-index: 0;
-}
-/* Fallback tint when image not available */
-.hero-bg-fallback {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, #0a2e0f 0%, #1a5c24 50%, #0a2e0f 100%);
-  z-index: 0;
-}
-
-.hero-inner {
-  position: relative;
-  z-index: 1;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 60px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 40px;
+.hero-img {
   width: 100%;
+  height: auto;
+  display: block;
 }
 
-.hero-content {
-  flex: 1;
-  max-width: 520px;
-}
-
-.hero-logo-gooolazo {
-  width: 340px;
-  max-width: 100%;
-  margin-bottom: 16px;
-}
-/* Placeholder for GOooLAZO logo */
-.hero-logo-gooolazo-placeholder {
-  width: 340px;
-  max-width: 100%;
-  height: 120px;
-  background: var(--yellow);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 16px;
-}
-.hero-logo-gooolazo-placeholder span {
-  font-family: var(--font-display);
-  font-size: 3rem;
-  color: var(--green-dark);
-  letter-spacing: 0.04em;
-}
-
-.hero-delencanto-logo {
-  width: 140px;
-  margin-bottom: 24px;
-}
-
-.hero-tagline {
-  background: var(--yellow);
-  color: var(--green-dark);
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  letter-spacing: 0.04em;
-  line-height: 1.2;
-  padding: 14px 24px;
-  border-radius: var(--radius);
-  display: inline-block;
-  text-transform: uppercase;
-}
-
-/* Hero product image (right side) */
-.hero-products {
-  flex: 1;
-  max-width: 520px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.hero-products img {
-  width: 100%;
-  max-width: 480px;
-  filter: drop-shadow(0 10px 30px rgba(0,0,0,0.5));
-}
-/* Placeholder for hero product cutout */
-.hero-products-placeholder {
-  width: 400px;
-  height: 380px;
-  max-width: 100%;
-  background: rgba(255,215,0,0.1);
-  border: 2px dashed rgba(255,215,0,0.3);
-  border-radius: var(--radius-lg);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(255,255,255,0.4);
-  font-size: 0.9rem;
-  text-align: center;
-  padding: 20px;
-}
-
-/* Grass strip divider */
-.grass-divider {
-  width: 100%;
-  height: 60px;
-  background-image: url('../assets/images/grass-strip.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-/* Fallback when image not available */
-.grass-divider-fallback {
-  width: 100%;
-  height: 24px;
-  background: linear-gradient(180deg, var(--green-light) 0%, var(--green-mid) 100%);
-}
-
-/* Paint brush stroke decorators (positioned absolutely in sections) */
-.brush-stroke {
-  position: absolute;
-  pointer-events: none;
-  z-index: 0;
+@media (max-width: 768px) {
+  .hero {
+    min-height: 300px;
+  }
 }
 
 /* ============================================================
@@ -339,19 +225,13 @@ ul { list-style: none; }
   position: relative;
   background-color: var(--white);
   /* Optional: stadium background at low opacity */
-  background-image: url('../assets/images/mecanica-bg.jpg');
+  background-image: url('../assets/images/fondoMecanicaPC.jpg');
   background-size: cover;
-  background-position: center;
+  background-position: top center;
   padding: 70px 0 80px;
   overflow: hidden;
 }
-.mecanica::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(255,255,255,0.88);
-  z-index: 0;
-}
+
 
 .mecanica .section-title-wrap,
 .mecanica .section-subtitle,
@@ -371,27 +251,28 @@ ul { list-style: none; }
 .step-card {
   background: var(--white);
   border-radius: var(--radius-lg);
-  border: 3px solid var(--green-dark);
+  border: 12px solid var(--green-light);
   overflow: visible;
   position: relative;
-  padding-top: 30px;
+  padding-top: 0px;
   box-shadow: var(--shadow);
   text-align: center;
 }
 
 .step-number {
   position: absolute;
-  top: -20px;
+  top: -40px;
   left: 50%;
   transform: translateX(-50%);
-  width: 46px;
-  height: 46px;
-  background: var(--yellow);
-  border: 3px solid var(--green-dark);
+  width: 60px;
+  height: 60px;
+  background: var(--yellow-mid);
+  border: 6px solid var(--white);
   border-radius: 50%;
   font-family: var(--font-display);
-  font-size: 1.3rem;
-  color: var(--green-dark);
+  font-size: 1.5rem;
+  color: var(--black);
+  font-weight: bolder;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -400,14 +281,15 @@ ul { list-style: none; }
 
 .step-image {
   width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 0;
+  height: 250px;
+  object-fit: fill;
+  background-color: #038F3C;
 }
 .step-image-placeholder {
   width: 100%;
   height: 180px;
-  background: #c8e6c9;
+  border-radius: 12px 12px 0 0;
+  background-color: #038F3C;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -422,9 +304,12 @@ ul { list-style: none; }
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: 1rem;
-  color: var(--green-dark);
+  color: var(--white);
   margin-bottom: 8px;
   text-align: center;
+  background: var(--green-light);
+  border-radius: 25px;
+  padding: 10px;
 }
 .step-desc {
   font-size: 0.82rem;
@@ -480,9 +365,8 @@ ul { list-style: none; }
 }
 
 .prize-card {
-  background: rgba(255,255,255,0.15);
+  background: transparent;
   border-radius: var(--radius-lg);
-  border: 2px solid rgba(255,255,255,0.35);
   overflow: hidden;
   text-align: center;
   transition: transform var(--transition), box-shadow var(--transition);
@@ -524,7 +408,7 @@ ul { list-style: none; }
    ============================================================ */
 .ganadores {
   position: relative;
-  background: var(--white);
+  background: var(--dark-blue);
   padding: 70px 0 80px;
   overflow: hidden;
 }
@@ -574,7 +458,8 @@ ul { list-style: none; }
 }
 
 .carousel-track-container {
-  overflow: hidden;
+ /* overflow: hidden;  Changed it due to step number not working the negative values */
+  overflow: unset; 
   width: 100%;
 }
 
@@ -641,8 +526,7 @@ ul { list-style: none; }
    FOOTER
    ============================================================ */
 .site-footer {
-  background: var(--green-dark);
-  border-top: 3px solid var(--yellow);
+  background: var(--green-light);
   padding: 40px 24px 30px;
 }
 
@@ -704,11 +588,11 @@ ul { list-style: none; }
   color: var(--green-dark);
 }
 .footer-logo-delencanto {
-  width: 100px;
+  width: 200px;
 }
 .footer-logo-delencanto-placeholder {
-  width: 100px;
-  height: 36px;
+  width: 200px;
+  height: 89px;
   background: rgba(255,215,0,0.2);
   border: 1px solid var(--yellow);
   border-radius: 6px;
