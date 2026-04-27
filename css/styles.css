@@ -246,7 +246,7 @@ ul { list-style: none; }
   background-image: url('../assets/images/fondoMecanicaPC.jpg');
   background-size: cover;
   background-position: top center;
-  padding: 70px 0 80px;
+  padding: 70px 0 160px;
   overflow: hidden;
 }
 
@@ -341,8 +341,8 @@ ul { list-style: none; }
    ============================================================ */
 .premios {
   position: relative;
-  background-color: var(--amber);
-  background-image: url('../assets/images/premios-bg.jpg');
+  background-image: url('../assets/images/background-bar-yellow.jpg');
+  background-repeat: repeat-x;
   background-size: cover;
   background-position: center;
   padding: 70px 0 90px;
@@ -352,7 +352,8 @@ ul { list-style: none; }
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(240,165,0,0.82);
+  background-image: url('../assets/images/background-bar-yellow.jpg');
+  background-repeat: repeat-x;
   z-index: 0;
 }
 
@@ -437,7 +438,7 @@ ul { list-style: none; }
 .ganadores {
   position: relative;
   background: var(--dark-blue);
-  padding: 70px 0 80px;
+  padding: 0px 0 80px;
   overflow: hidden;
 }
 
@@ -709,7 +710,7 @@ ul { list-style: none; }
    ============================================================ */
 .brush-divider {
  width: 100%;
-  height: 250px;
+  height: 150px;
   position: relative;
   overflow: hidden;
   line-height: 0;
