@@ -25,7 +25,7 @@
   --yellow:       #FFE900; 
   --yellow-mid: #F0CD13;
   --yellow-dark:  #e6b800; 
-  --amber:        #f0a500;
+  --amber:        #F4BC41;
   --amber-light:  #f5bc2f;
   --dark-blue:    #081025;
   --white:        #ffffff;
@@ -366,11 +366,21 @@ ul { list-style: none; }
 .field-deco {
   position: absolute;
   z-index: 0;
-  opacity: 0.18;
+  opacity: 1;
   pointer-events: none;
 }
 .field-deco-left  { left: 0; top: 50%; transform: translateY(-50%); width: 140px; }
-.field-deco-right { right: 0; top: 50%; transform: translateY(-50%); width: 140px; transform: translateY(-50%) scaleX(-1); }
+.field-deco-right { right: 0; top: 50%; transform: translateY(-50%); width: 140px; }
+
+/* Decorative arrow swooshes */
+.arrow-deco {
+  position: absolute;
+  z-index: 0;
+  opacity: 1;
+  pointer-events: none;
+}
+.arrow-deco-tr { top: 5%; right: 4%; width: 160px; }
+.arrow-deco-bl { bottom: 5%; left: 4%; width: 130px; }
 
 /* Prize grid */
 .premios-grid {
@@ -756,6 +766,10 @@ ul { list-style: none; }
 
   /* Premios – hide grid, show carousel */
   .premios-grid { display: none; }
+
+  /* Hide decorative field and arrow images on mobile */
+  .field-deco  { display: none; }
+
 
   /* Ganadores winners-grid → handled in JS carousel */
   .winners-grid { display: none; }
