@@ -858,12 +858,18 @@ ul { list-style: none; }
     padding: 40px 0 150px;
   }
 
-  .premios-carousel-wrapper,
+  .premios-carousel-wrapper {
+    width: 75%;
+    margin: 0 auto;
+    overflow: visible;
+  }
+
   .ganadores-carousel-wrapper {
     width: 95%;
     margin: 0 auto;
     overflow: visible;
   }
+
   .premios-carousel-wrapper .carousel-track-container,
   .ganadores-carousel-wrapper .carousel-track-container {
     overflow: hidden;
