@@ -315,14 +315,25 @@
   ══════════════════════════════════════════════════════ -->
   <section class="ganadores hidden" id="ganadores" aria-labelledby="ganadores-title">
 
+    <!-- Decorative arrows -->
+    <img src="assets/images/arrow-bl.png" alt="" aria-hidden="true" class="ganadores-arrow ganadores-arrow-left">
+    <img src="assets/images/arrow-tr.png" alt="" aria-hidden="true" class="ganadores-arrow ganadores-arrow-right">
+
     <div class="ganadores-inner">
       <div class="section-title-wrap">
         <h2 class="section-badge" id="ganadores-title">Ganadores</h2>
       </div>
       <p class="section-subtitle">Aquí están todos los afortunados ganadores</p>
 
-      <!-- ── DESKTOP: 3-col grid (filled by JS) ─────────── -->
-      <div class="winners-grid" id="winners-grid"></div>
+      <!-- ── DESKTOP: Carousel 3-col (filled by JS) ──────── -->
+      <div class="ganadores-desktop-carousel carousel-wrapper" aria-label="Ganadores">
+        <button class="carousel-btn prev" aria-label="Anterior">&#8249;</button>
+        <div class="carousel-track-container">
+          <div class="carousel-track" id="winners-desktop-track"></div>
+        </div>
+        <button class="carousel-btn next" aria-label="Siguiente">&#8250;</button>
+        <div class="carousel-dots" id="winners-desktop-dots"></div>
+      </div>
 
       <!-- ── MOBILE: Carousel (filled by JS) ───────────── -->
       <div class="ganadores-carousel-wrapper carousel-wrapper" aria-label="Ganadores">
