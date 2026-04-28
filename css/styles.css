@@ -730,7 +730,7 @@ ul { list-style: none; }
   justify-content: center;
   transition: background var(--transition), transform var(--transition);
 }
-.social-icon:hover { background: var(--white); transform: scale(1.1); }
+.social-icon:hover { background: none; transform: scale(1.1); }
 .social-icon svg { width: 18px; height: 18px; fill: var(--green-dark); }
 
 .footer-bottom {
