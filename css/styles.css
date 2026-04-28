@@ -576,12 +576,33 @@ ul { list-style: none; }
 .carousel-btn.prev { left: 0; }
 .carousel-btn.next { right: 0; }
 
+/* Nav bar: arrows + dots in one row */
+.carousel-nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+.carousel-nav-bar .carousel-btn {
+  position: static;
+  transform: none;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  width: auto;
+  height: auto;
+  font-size: 1.6rem;
+  line-height: 1;
+}
+.carousel-nav-bar .carousel-btn:hover { background: transparent; color: var(--gray-light); }
+
 /* Dots */
 .carousel-dots {
   display: flex;
   justify-content: center;
   gap: 8px;
-  margin-top: 20px;
+  margin-top: 0;
 }
 .carousel-dot {
   width: 10px;
@@ -839,7 +860,7 @@ ul { list-style: none; }
 
   .premios-carousel-wrapper,
   .ganadores-carousel-wrapper {
-    width: 75%;
+    width: 95%;
     margin: 0 auto;
     overflow: visible;
   }
@@ -859,6 +880,9 @@ ul { list-style: none; }
   width: 80px;
 }
 
+.ganadores {
+  padding: 50px 0 80px;
+}
   /* Brush dividers */
   .brush-divider { height: 50px; margin-top: -100px;  }
   /* Push arrows outside the card with 5px gap */
@@ -870,6 +894,7 @@ ul { list-style: none; }
   .carousel-slide {
     display: flex;
     align-items: stretch;
+    flex-direction: column;
   }
   .carousel-slide .step-card,
   .carousel-slide .prize-card {
@@ -923,6 +948,10 @@ ul { list-style: none; }
     width: 20px;
     height: 20px;
   }
+
+  .ganadores-arrow-right { top: 10%; }
+  .carousel-dots { display: none; }
+  .ganadores-arrow-left  { display: none; }
   .social-icons { justify-content: flex-end; }
   .footer-social p { margin-right: 0px; margin-bottom: 10px; }
   .footer-contact h3 { font-size: 1.2rem; }
