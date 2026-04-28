@@ -465,31 +465,67 @@ ul { list-style: none; }
   z-index: 1;
 }
 
-/* 3-column winners grid */
-.winners-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px 24px;
+/* Decorative arrows in ganadores section */
+.ganadores-arrow {
+  position: absolute;
+  width: 150px;
+  opacity: 0.85;
+  pointer-events: none;
+  z-index: 2;
+}
+.ganadores-arrow-left {
+  left: 20px;
+  top: 50%;
+  transform: translateY(-60%);
+}
+.ganadores-arrow-right {
+  right: 20px;
+  top: 50%;
+  transform: translateY(-60%);
 }
 
+/* Desktop winners carousel */
+.ganadores-desktop-carousel {
+  display: none;
+}
+.winners-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0 20px;
+}
+.winners-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Winner row */
 .winner-row {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: var(--gray-light);
-  border-radius: 6px;
-  padding: 10px 14px;
+  align-items: stretch;
+  overflow: hidden;
   font-size: 0.88rem;
+  gap: 5px;
 }
-.winner-name { font-weight: 700; color: var(--green-dark); }
+.winner-name {
+  flex: 1;
+  font-weight: 700;
+  color: var(--dark-blue);
+  background: var(--gray-light);
+  padding: 10px 14px;
+}
 .winner-city {
-  background: var(--green-dark);
+  background: #2b2b2b;
   color: var(--white);
-  border-radius: 4px;
-  padding: 3px 10px;
-  font-size: 0.78rem;
+  padding: 10px 0;
+  font-size: 0.85rem;
   font-weight: 700;
   white-space: nowrap;
+  width: 90px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* ============================================================
@@ -540,12 +576,33 @@ ul { list-style: none; }
 .carousel-btn.prev { left: 0; }
 .carousel-btn.next { right: 0; }
 
+/* Nav bar: arrows + dots in one row */
+.carousel-nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+.carousel-nav-bar .carousel-btn {
+  position: static;
+  transform: none;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  width: auto;
+  height: auto;
+  font-size: 1.6rem;
+  line-height: 1;
+}
+.carousel-nav-bar .carousel-btn:hover { background: transparent; color: var(--gray-light); }
+
 /* Dots */
 .carousel-dots {
   display: flex;
   justify-content: center;
   gap: 8px;
-  margin-top: 20px;
+  margin-top: 0;
 }
 .carousel-dot {
   width: 10px;
@@ -803,7 +860,7 @@ ul { list-style: none; }
 
   .premios-carousel-wrapper,
   .ganadores-carousel-wrapper {
-    width: 75%;
+    width: 95%;
     margin: 0 auto;
     overflow: visible;
   }
@@ -823,6 +880,9 @@ ul { list-style: none; }
   width: 80px;
 }
 
+.ganadores {
+  padding: 50px 0 80px;
+}
   /* Brush dividers */
   .brush-divider { height: 50px; margin-top: -100px;  }
   /* Push arrows outside the card with 5px gap */
@@ -834,6 +894,7 @@ ul { list-style: none; }
   .carousel-slide {
     display: flex;
     align-items: stretch;
+    flex-direction: column;
   }
   .carousel-slide .step-card,
   .carousel-slide .prize-card {
@@ -851,8 +912,9 @@ ul { list-style: none; }
   .field-deco  { display: none; }
 
 
-  /* Ganadores winners-grid → handled in JS carousel */
-  .winners-grid { display: none; }
+  /* Ganadores → mobile carousel only */
+  .ganadores-desktop-carousel { display: none; }
+  .ganadores-arrow { width: 100px; }
 
   /* Footer */
   .footer-inner {
@@ -886,6 +948,10 @@ ul { list-style: none; }
     width: 20px;
     height: 20px;
   }
+
+  .ganadores-arrow-right { top: 10%; }
+  .carousel-dots { display: none; }
+  .ganadores-arrow-left  { display: none; }
   .social-icons { justify-content: flex-end; }
   .footer-social p { margin-right: 0px; margin-bottom: 10px; }
   .footer-contact h3 { font-size: 1.2rem; }
@@ -900,6 +966,11 @@ ul { list-style: none; }
   .mecanica-carousel-wrapper { display: none; }
   .premios-carousel-wrapper  { display: none; }
   .ganadores-carousel-wrapper { display: none; }
-  /* Show desktop winners grid */
-  .winners-grid { display: grid; }
+  /* Show desktop winners carousel */
+  .ganadores-desktop-carousel {
+    display: block;
+    padding: 0 50px; /* room for nav buttons */
+  }
+  .ganadores-desktop-carousel .carousel-track-container { overflow: hidden; }
+  .ganadores-desktop-carousel .carousel-slide { padding: 0 4px; }
 }

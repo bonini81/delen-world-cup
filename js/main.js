@@ -118,16 +118,43 @@ async function loadWinners() {
 }
 
 function renderWinnersDesktop(winners) {
-  const grid = document.getElementById('winners-grid');
-  if (!grid) return;
-  grid.innerHTML = '';
-  winners.forEach(w => {
-    const row = document.createElement('div');
-    row.className = 'winner-row';
-    row.innerHTML = `<span class="winner-name">${escapeHtml(w.name)}</span>
-                     <span class="winner-city">${escapeHtml(w.city)}</span>`;
-    grid.appendChild(row);
+  const track = document.getElementById('winners-desktop-track');
+  if (!track) return;
+
+  const perCol   = 5;  // rows per column
+  const perSlide = 15; // 3 columns × 5 rows
+  const pages    = [];
+  for (let i = 0; i < winners.length; i += perSlide) {
+    pages.push(winners.slice(i, i + perSlide));
+  }
+
+  track.innerHTML = '';
+  pages.forEach(page => {
+    const slide = document.createElement('div');
+    slide.className = 'carousel-slide';
+
+    const cols = document.createElement('div');
+    cols.className = 'winners-columns';
+
+    for (let c = 0; c < 3; c++) {
+      const col = document.createElement('div');
+      col.className = 'winners-col';
+      page.slice(c * perCol, c * perCol + perCol).forEach(w => {
+        const row = document.createElement('div');
+        row.className = 'winner-row';
+        row.innerHTML = `<div class="winner-name">${escapeHtml(w.name)}</div>
+                         <div class="winner-city">${escapeHtml(w.city)}</div>`;
+        col.appendChild(row);
+      });
+      cols.appendChild(col);
+    }
+
+    slide.appendChild(cols);
+    track.appendChild(slide);
   });
+
+  const wrapper = document.querySelector('.ganadores-desktop-carousel');
+  if (wrapper) new Carousel(wrapper);
 }
 
 function renderWinnersMobileCarousel(winners) {
@@ -148,8 +175,8 @@ function renderWinnersMobileCarousel(winners) {
     page.forEach(w => {
       const row = document.createElement('div');
       row.className = 'winner-row';
-      row.innerHTML = `<span class="winner-name">${escapeHtml(w.name)}</span>
-                       <span class="winner-city">${escapeHtml(w.city)}</span>`;
+      row.innerHTML = `<div class="winner-name">${escapeHtml(w.name)}</div>
+                       <div class="winner-city">${escapeHtml(w.city)}</div>`;
       slide.appendChild(row);
     });
     track.appendChild(slide);
