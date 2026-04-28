@@ -856,16 +856,40 @@ ul { list-style: none; }
 
   /* Footer */
   .footer-inner {
-    grid-template-columns: 1fr;
-    text-align: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "logo    logo"
+      "contact social";
+    text-align: left;
   }
-  .footer-social {   
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
- }
-  .social-icons { justify-content: center; }
-  .footer-contact-item { justify-content: center; }
+  .footer-logos  { grid-area: logo; text-align: center; }
+  .footer-contact { grid-area: contact; }
+  .footer-social {
+    grid-area: social;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+     margin-left: 20px;
+  }
+  .footer-contact-item { font-size: 0.70rem; }
+  .social-icon {
+    width: 20px;
+    height: 20px;
+  }
+  .footer-mail-icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .footer-whatsapp-icon {
+    width: 20px;
+    height: 20px;
+  }
+  .social-icons { justify-content: flex-end; }
+  .footer-social p { margin-right: 0px; margin-bottom: 10px; }
+  .footer-contact h3 { font-size: 1.2rem; }
+  .footer-contact-item { justify-content: flex-start; }
 }
 
 /* ============================================================
