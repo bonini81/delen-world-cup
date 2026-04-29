@@ -1036,4 +1036,10 @@ ul { list-style: none; }
   .step-image {
     height: 150px;
   }
+  .section-badge {
+    font-size: 2rem;
+  }
+  .section-badge--premios {
+    font-size: 2rem;
+  } 
 }
