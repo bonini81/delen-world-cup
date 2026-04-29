@@ -207,7 +207,7 @@ ul { list-style: none; }
   font-size: 1.5rem;
   color: var(--white);
   margin-top: 20px;
-  margin-bottom: 50px;
+  margin-bottom: 70px;
 }
 
 /* ============================================================
@@ -354,7 +354,7 @@ ul { list-style: none; }
   background-repeat: repeat-x;
   background-size: cover;
   background-position: center;
-  padding: 70px 0 200px;
+  padding: 40px 0 200px;
   overflow: unset;
 }
 .premios::before {
@@ -389,8 +389,8 @@ ul { list-style: none; }
   opacity: 1;
   pointer-events: none;
 }
-.arrow-deco-tr { top: 15%; right: 4%; width: 160px; }
-.arrow-deco-bl { bottom: 19%; left: 4%; width: 130px; }
+.arrow-deco-tr { top: 15%; right: 14%; width: 160px; }
+.arrow-deco-bl { bottom: 19%; left: 14%; width: 130px; }
 
 /* Decorative potato – mobile only */
 .premios-papa {
@@ -481,13 +481,13 @@ ul { list-style: none; }
   z-index: 2;
 }
 .ganadores-arrow-left {
-  left: 20px;
-  top: 50%;
+  left: 12%;
+  top: 35%;
   transform: translateY(-60%);
 }
 .ganadores-arrow-right {
-  right: 20px;
-  top: 50%;
+  right: 12%;
+  top: 35%;
   transform: translateY(-60%);
 }
 
@@ -860,9 +860,13 @@ ul { list-style: none; }
   .section-badge--premios { font-size: 1.7rem; padding: 8px 24px; }
 
   /* Mecánica – hide grid, show carousel */
-  .mecanica {
+   .mecanica {
     padding: 30px 0 120px;
+    background-image: url('../assets/images/fondoMecanicaMobile.jpg');
+    background-size: cover;
+    background-position: top center;
   }
+
   .mecanica-cards { display: none; }
   .mecanica-carousel-wrapper {
     width: 75%;
@@ -932,7 +936,7 @@ ul { list-style: none; }
   }
   .carousel-slide .step-content { flex: 1; }
 
-  .section-subtitle { font-size: 1rem; margin-bottom: 50px; }
+  .section-subtitle { font-size: 1rem; margin-bottom: 3cap; }
   /* Premios – hide grid, show carousel */
   .premios-grid { display: none; }
   .premios-papa { display: block; }
@@ -978,7 +982,8 @@ ul { list-style: none; }
     height: 20px;
   }
 
-  .ganadores-arrow-right { top: 10%; }
+  .ganadores-arrow-right { top: 8%; right: 5%; }
+  .carousel-nav-bar { margin-top: 0; }
   .carousel-dots { display: none; }
   .ganadores-arrow-left  { display: none; }
   .social-icons { justify-content: flex-end; }
