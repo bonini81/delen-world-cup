@@ -342,7 +342,7 @@ ul { list-style: none; }
   font-size: 0.72rem;
   line-height: 1.2;
   color: var(--gray-text);
-  text-align: justify;
+  text-align: center;
   margin-top: auto;
   margin-bottom: auto;
 }
