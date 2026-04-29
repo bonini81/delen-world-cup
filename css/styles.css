@@ -338,15 +338,11 @@ ul { list-style: none; }
   width: 100%;
 }
 .step-desc {
-  font-size: 0.82rem;
+  font-size: 0.72rem;
   line-height: 1.5;
   color: var(--gray-text);
-  text-align: center;
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  text-align: justify;
+  margin-top: 5px;
 }
 
 /* ============================================================
@@ -359,7 +355,7 @@ ul { list-style: none; }
   background-size: cover;
   background-position: center;
   padding: 70px 0 200px;
-  overflow: hidden;
+  overflow: unset;
 }
 .premios::before {
   content: '';
@@ -395,6 +391,18 @@ ul { list-style: none; }
 }
 .arrow-deco-tr { top: 15%; right: 4%; width: 160px; }
 .arrow-deco-bl { bottom: 19%; left: 4%; width: 130px; }
+
+/* Decorative potato – mobile only */
+.premios-papa {
+  display: none;
+  position: absolute;
+  right: -10px;
+  top: -50px;
+  width: 80px;
+  pointer-events: none;
+  z-index: 2;
+  transform: rotate(15deg);
+}
 
 /* Prize grid */
 .premios-grid {
@@ -452,7 +460,6 @@ ul { list-style: none; }
   position: relative;
   background: var(--dark-blue);
   padding: 0px 0 80px;
-  overflow: hidden;
 }
 
 .ganadores.hidden { display: none; }
@@ -482,6 +489,19 @@ ul { list-style: none; }
   right: 20px;
   top: 50%;
   transform: translateY(-60%);
+}
+
+/* Decorative potato – desktop only */
+.ganadores-papa {
+  display: none;
+  position: absolute;
+  right: 10%;
+  top: -30px;
+  width: 180px;
+  pointer-events: none;
+  z-index: 2;
+  transform: rotate(10deg);
+  margin-top: -20px;  
 }
 
 /* Desktop winners carousel */
@@ -896,11 +916,14 @@ ul { list-style: none; }
 
   /* Equal-height carousel cards */
   .carousel-track { align-items: stretch; }
-  .carousel-slide {
+
+  
+
+ .mecanica-carousel-wrapper .carousel-slide {
     display: flex;
     align-items: stretch;
-    flex-direction: column;
   }
+
   .carousel-slide .step-card,
   .carousel-slide .prize-card {
     display: flex;
@@ -912,6 +935,7 @@ ul { list-style: none; }
   .section-subtitle { font-size: 1rem; margin-bottom: 50px; }
   /* Premios – hide grid, show carousel */
   .premios-grid { display: none; }
+  .premios-papa { display: block; }
 
   /* Hide decorative field and arrow images on mobile */
   .field-deco  { display: none; }
@@ -967,6 +991,7 @@ ul { list-style: none; }
    RESPONSIVE – DESKTOP (min 769px)
    ============================================================ */
 @media (min-width: 769px) {
+  .ganadores-papa { display: block; }
   /* Hide mobile carousels on desktop */
   .mecanica-carousel-wrapper { display: none; }
   .premios-carousel-wrapper  { display: none; }
