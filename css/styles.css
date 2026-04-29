@@ -372,7 +372,7 @@ ul { list-style: none; }
 .premios .section-subtitle, .section-subtitle-winners,
 .premios-grid-wrapper { position: relative; z-index: 1; }
 
-.premios .section-subtitle, .section-subtitle-winners { color: var(--dark-blue); font-weight: 700; }
+.premios .section-subtitle { color: var(--dark-blue); font-weight: 700; }
 
 /* Soccer field corner marks (decorative) */
 .field-deco {
@@ -398,7 +398,7 @@ ul { list-style: none; }
 .premios-papa {
   display: none;
   position: absolute;
-  right: -10px;
+  right: 0px;
   top: -50px;
   width: 80px;
   pointer-events: none;
@@ -888,7 +888,7 @@ ul { list-style: none; }
   }
 
   .premios-carousel-wrapper {
-    width: 75%;
+    width: 68%;
     margin: 0 auto;
     overflow: visible;
   }
@@ -905,7 +905,7 @@ ul { list-style: none; }
   }
 
   .arrow-deco-tr {
-  top: 28%;
+  top: 27%;
   right: 4%;
   width: 80px;
 }
@@ -942,7 +942,7 @@ ul { list-style: none; }
   .carousel-slide .step-content { flex: 1; }
 
   .section-subtitle {display: none;  }
-   .section-subtitle.mobile {display: block; font-size: 1rem; margin-bottom: 3cap; }
+   .section-subtitle.mobile, .section-subtitle-winners, .premios .section-subtitle {display: block; font-size: 1rem; margin-bottom: 3cap; }
   /* Premios – hide grid, show carousel */
   .premios-grid { display: none; }
   .premios-papa { display: block; }
@@ -999,11 +999,12 @@ ul { list-style: none; }
 }
 
 /* ============================================================
-   RESPONSIVE – DESKTOP (min 769px)
+   RESPONSIVE – TABLET + DESKTOP BASE (min 769px)
+   Shared styles for all non-mobile viewports.
    ============================================================ */
 @media (min-width: 769px) {
   .ganadores-papa { display: block; }
-  /* Hide mobile carousels on desktop */
+  /* Hide mobile carousels */
   .mecanica-carousel-wrapper { display: none; }
   .premios-carousel-wrapper  { display: none; }
   .ganadores-carousel-wrapper { display: none; }
@@ -1017,7 +1018,8 @@ ul { list-style: none; }
 }
 
 /* ============================================================
-   RESPONSIVE – TABLET (769px – 1024px)
+   RESPONSIVE – TABLET ONLY (769px – 1024px)
+   Overrides for mid-size screens.
    ============================================================ */
 @media (min-width: 769px) and (max-width: 1024px) {
   /* Premios – hide field marks and arrow swooshes */
@@ -1047,5 +1049,13 @@ ul { list-style: none; }
   }
   .section-badge--premios {
     font-size: 2rem;
-  } 
+  }
+}
+
+/* ============================================================
+   RESPONSIVE – DESKTOP ONLY (min 1025px)
+   Styles exclusive to large screens.
+   ============================================================ */
+@media (min-width: 1025px) {
+/** Specific Desktop styles */
 }
