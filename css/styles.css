@@ -1009,3 +1009,31 @@ ul { list-style: none; }
   .ganadores-desktop-carousel .carousel-track-container { overflow: hidden; }
   .ganadores-desktop-carousel .carousel-slide { padding: 0 4px; }
 }
+
+/* ============================================================
+   RESPONSIVE – TABLET (769px – 1024px)
+   ============================================================ */
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* Premios – hide field marks and arrow swooshes */
+  .field-deco  { display: none; }
+  .arrow-deco  { display: none; }
+
+  /* Ganadores – hide potato */
+  .ganadores-papa, .ganadores-arrow-left, .ganadores-arrow-right { display: none; }
+
+  .step-title {
+    font-size: 0.8rem;
+  }
+  .step-desc {
+    font-size: 0.68rem;
+  }
+  .nav-links {
+    gap: 15px;
+  }
+  .nav-links a {
+    font-size: 0.75rem;
+  }
+  .step-image {
+    height: 150px;
+  }
+}
