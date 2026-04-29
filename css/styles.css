@@ -999,6 +999,33 @@ ul { list-style: none; }
 }
 
 /* ============================================================
+   RESPONSIVE – MID (600px – 768px)
+   2-column grid for Mecánica and Premios; carousels hidden.
+   ============================================================ */
+@media (min-width: 600px) and (max-width: 768px) {
+  /* Mecánica – swap carousel for 2-col grid */
+  .mecanica-carousel-wrapper { display: none; }
+  .mecanica-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 56px;    /* extra room for the step-number bubble (top: -40px) */
+    padding-top: 44px; /* same reason – first row needs breathing room too */
+  }
+
+  /* Premios – swap carousel for 2-col grid */
+  .premios-carousel-wrapper, .ganadores-arrow-right { display: none; }
+  .premios-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Slightly shorter images for the narrower 2-col cards */
+  .step-image  { height: 180px; }
+  .prize-image { height: 160px; }
+
+}
+
+/* ============================================================
    RESPONSIVE – TABLET + DESKTOP BASE (min 769px)
    Shared styles for all non-mobile viewports.
    ============================================================ */
@@ -1022,6 +1049,11 @@ ul { list-style: none; }
    Overrides for mid-size screens.
    ============================================================ */
 @media (min-width: 769px) and (max-width: 1024px) {
+
+  .mecanica {
+  padding: 20px 0 100px;
+}
+.premios { padding: 20px 0 50px; }
   /* Premios – hide field marks and arrow swooshes */
   .field-deco  { display: none; }
   .arrow-deco  { display: none; }
