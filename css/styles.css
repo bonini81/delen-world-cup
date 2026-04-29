@@ -213,7 +213,7 @@ ul { list-style: none; }
 /* ============================================================
    HERO SECTION
    Desktop: assets/images/hero-desktop.jpg
-   Mobile:  assets/images/hero-mobile.jpg
+   Mobile:  assets/images/hero-mobile.png
    ============================================================ */
 .hero {
   display: block;
@@ -339,10 +339,11 @@ ul { list-style: none; }
 }
 .step-desc {
   font-size: 0.72rem;
-  line-height: 1.5;
+  line-height: 1.2;
   color: var(--gray-text);
   text-align: justify;
-  margin-top: 5px;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 /* ============================================================
@@ -837,9 +838,10 @@ ul { list-style: none; }
   .header-logo .logo-placeholder { width: 100px; font-size: 0.8rem; }
   .header-inner { position: relative; }
   .header-logo {
-    position: absolute;
+    display: none;
+    /*position: absolute;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%);*/
   }
 
   /* Hero */
