@@ -19,7 +19,8 @@
 /* ── CSS Variables ────────────────────────────────────────── */
 :root {
   --green-dark:   #0d3b14;
-  --dark-blue:    #081126;
+  --dark-blue:    #081125;
+  --mid-dark-blue: #0b1e28;
   --green-mid:    #038F3C;
   --green-light:  #038F3C;
   --yellow:       #FFE900; 
@@ -27,7 +28,6 @@
   --yellow-dark:  #e6b800; 
   --amber:        #F4BC41;
   --amber-light:  #f5bc2f;
-  --dark-blue:    #081025;
   --white:        #ffffff;
   --gray-light:   #f2f2f2;
   --gray-text:    #444444;
@@ -64,7 +64,7 @@ ul { list-style: none; }
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: #0b1e28;
+  background:  var( --mid-dark-blue);
 }
 
 .header-inner {
@@ -781,7 +781,7 @@ ul { list-style: none; }
 .terminos-content h1 {
   font-family: var(--font-display);
   font-size: 2.2rem;
-  color: var(--green-dark);
+  color: var( --mid-dark-blue);
   letter-spacing: 0.04em;
   margin-bottom: 24px;
   text-transform: uppercase;
@@ -790,14 +790,14 @@ ul { list-style: none; }
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: 1.1rem;
-  color: var(--green-dark);
+  color: var( --mid-dark-blue);
   margin: 28px 0 8px;
 }
 .terminos-content h3 {
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: 1rem;
-  color: var(--green-dark);
+  color: var( --mid-dark-blue);
   margin: 20px 0 8px;
 }
 .terminos-content ul {
