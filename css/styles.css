@@ -58,6 +58,13 @@ a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 
 /* ============================================================
+   Ganadores Hide
+   ============================================================ */
+
+.brush-divider.ganadores-section, .ganadores.ganadores-section { display: none; }
+
+
+/* ============================================================
    HEADER / NAV
    ============================================================ */
 .site-header {
@@ -360,7 +367,8 @@ ul { list-style: none; }
   background-repeat: repeat-x;
   background-size: cover;
   background-position: center;
-  padding: 40px 0 200px;
+  /** padding: 40px 0 200px;  Poner de vuelta cuando vuelva seccion ganadores */
+  padding: 40px 0 90px;
   overflow: unset;
 }
 .premios::before {
@@ -395,8 +403,9 @@ ul { list-style: none; }
   opacity: 1;
   pointer-events: none;
 }
-.arrow-deco-tr { top: 15%; right: 14%; width: 160px; }
-.arrow-deco-bl { bottom: 19%; left: 14%; width: 130px; }
+.arrow-deco-tr { top: 15%; right: 13%; width: 160px; }
+/* .arrow-deco-bl { bottom: 19%; left: 14%; width: 130px; } Poner de vuelta al mostrar Ganadores */
+.arrow-deco-bl { bottom: 7%; left: 13%; width: 130px; } 
 
 /* Decorative potato – mobile only */
 .premios-papa {
@@ -910,7 +919,8 @@ ul { list-style: none; }
   .step-image { height: 225px; }
   
   .premios {
-    padding: 40px 0 150px;
+     /** padding: 40px 0 150px;  Poner de vuelta cuando vuelva seccion ganadores */
+    padding: 40px 0 60px;
   }
 
   .premios-carousel-wrapper {
@@ -931,12 +941,14 @@ ul { list-style: none; }
   }
 
   .arrow-deco-tr {
-  top: 27%;
+  /**  top: 27%; Poner de vuelta cuando vuelva seccion ganadores */
+  top: 31%;
   right: 4%;
   width: 80px;
 }
 .arrow-deco-bl {
-  bottom: 23%;
+  /**   bottom: 23%;  Poner de vuelta cuando vuelva seccion ganadores */
+  bottom: 13%;
   left: 4%;
   width: 80px;
 }
@@ -1074,7 +1086,7 @@ ul { list-style: none; }
    RESPONSIVE – TABLET ONLY (769px – 1024px)
    Overrides for mid-size screens.
    ============================================================ */
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (min-width: 769px) and (max-width: 1110px) {
 
   .mecanica {
   padding: 20px 0 100px;
@@ -1114,6 +1126,6 @@ ul { list-style: none; }
    RESPONSIVE – DESKTOP ONLY (min 1025px)
    Styles exclusive to large screens.
    ============================================================ */
-@media (min-width: 1025px) {
+@media (min-width: 1111px) {
 /** Specific Desktop styles */
 }
