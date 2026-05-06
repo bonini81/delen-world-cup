@@ -942,7 +942,7 @@ ul { list-style: none; }
 
   .arrow-deco-tr {
   /**  top: 27%; Poner de vuelta cuando vuelva seccion ganadores */
-  top: 31%;
+  top: 30%;
   right: 4%;
   width: 80px;
 }
