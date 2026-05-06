@@ -793,6 +793,28 @@ ul { list-style: none; }
   color: var(--green-dark);
   margin: 28px 0 8px;
 }
+.terminos-content h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--green-dark);
+  margin: 20px 0 8px;
+}
+.terminos-content ul {
+  margin-bottom: 16px;
+  padding-left: 20px;
+  list-style-type: disc;
+}
+.terminos-content ul.list-alpha {
+  list-style-type: none;
+  padding-left: 0;
+}
+.terminos-content li {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--gray-text);
+  margin-bottom: 8px;
+}
 .terminos-content p {
   font-size: 0.92rem;
   line-height: 1.7;
