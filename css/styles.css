@@ -19,7 +19,8 @@
 /* ── CSS Variables ────────────────────────────────────────── */
 :root {
   --green-dark:   #0d3b14;
-  --dark-blue:    #081126;
+  --dark-blue:    #081125;
+  --mid-dark-blue: #0b1e28;
   --green-mid:    #038F3C;
   --green-light:  #038F3C;
   --yellow:       #FFE900; 
@@ -27,7 +28,6 @@
   --yellow-dark:  #e6b800; 
   --amber:        #F4BC41;
   --amber-light:  #f5bc2f;
-  --dark-blue:    #081025;
   --white:        #ffffff;
   --gray-light:   #f2f2f2;
   --gray-text:    #444444;
@@ -58,13 +58,20 @@ a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 
 /* ============================================================
+   Ganadores Hide
+   ============================================================ */
+
+.brush-divider.ganadores-section, .ganadores.ganadores-section { display: none; }
+
+
+/* ============================================================
    HEADER / NAV
    ============================================================ */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: #0b1e28;
+  background:  var( --mid-dark-blue);
 }
 
 .header-inner {
@@ -360,7 +367,8 @@ ul { list-style: none; }
   background-repeat: repeat-x;
   background-size: cover;
   background-position: center;
-  padding: 40px 0 200px;
+  /** padding: 40px 0 200px;  Poner de vuelta cuando vuelva seccion ganadores */
+  padding: 40px 0 90px;
   overflow: unset;
 }
 .premios::before {
@@ -395,8 +403,9 @@ ul { list-style: none; }
   opacity: 1;
   pointer-events: none;
 }
-.arrow-deco-tr { top: 15%; right: 14%; width: 160px; }
-.arrow-deco-bl { bottom: 19%; left: 14%; width: 130px; }
+.arrow-deco-tr { top: 15%; right: 13%; width: 160px; }
+/* .arrow-deco-bl { bottom: 19%; left: 14%; width: 130px; } Poner de vuelta al mostrar Ganadores */
+.arrow-deco-bl { bottom: 7%; left: 13%; width: 130px; } 
 
 /* Decorative potato – mobile only */
 .premios-papa {
@@ -781,7 +790,7 @@ ul { list-style: none; }
 .terminos-content h1 {
   font-family: var(--font-display);
   font-size: 2.2rem;
-  color: var(--green-dark);
+  color: var( --mid-dark-blue);
   letter-spacing: 0.04em;
   margin-bottom: 24px;
   text-transform: uppercase;
@@ -790,8 +799,30 @@ ul { list-style: none; }
   font-family: var(--font-heading);
   font-weight: 700;
   font-size: 1.1rem;
-  color: var(--green-dark);
+  color: var( --mid-dark-blue);
   margin: 28px 0 8px;
+}
+.terminos-content h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1rem;
+  color: var( --mid-dark-blue);
+  margin: 20px 0 8px;
+}
+.terminos-content ul {
+  margin-bottom: 16px;
+  padding-left: 20px;
+  list-style-type: disc;
+}
+.terminos-content ul.list-alpha {
+  list-style-type: none;
+  padding-left: 0;
+}
+.terminos-content li {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--gray-text);
+  margin-bottom: 8px;
 }
 .terminos-content p {
   font-size: 0.92rem;
@@ -888,7 +919,8 @@ ul { list-style: none; }
   .step-image { height: 225px; }
   
   .premios {
-    padding: 40px 0 150px;
+     /** padding: 40px 0 150px;  Poner de vuelta cuando vuelva seccion ganadores */
+    padding: 40px 0 60px;
   }
 
   .premios-carousel-wrapper {
@@ -909,12 +941,14 @@ ul { list-style: none; }
   }
 
   .arrow-deco-tr {
-  top: 27%;
+  /**  top: 27%; Poner de vuelta cuando vuelva seccion ganadores */
+  top: 30%;
   right: 4%;
   width: 80px;
 }
 .arrow-deco-bl {
-  bottom: 23%;
+  /**   bottom: 23%;  Poner de vuelta cuando vuelva seccion ganadores */
+  bottom: 13%;
   left: 4%;
   width: 80px;
 }
@@ -1052,7 +1086,7 @@ ul { list-style: none; }
    RESPONSIVE – TABLET ONLY (769px – 1024px)
    Overrides for mid-size screens.
    ============================================================ */
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (min-width: 769px) and (max-width: 1110px) {
 
   .mecanica {
   padding: 20px 0 100px;
@@ -1092,6 +1126,6 @@ ul { list-style: none; }
    RESPONSIVE – DESKTOP ONLY (min 1025px)
    Styles exclusive to large screens.
    ============================================================ */
-@media (min-width: 1025px) {
+@media (min-width: 1111px) {
 /** Specific Desktop styles */
 }
