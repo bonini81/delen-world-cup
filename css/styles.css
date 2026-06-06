@@ -367,8 +367,8 @@ ul { list-style: none; }
   background-repeat: repeat-x;
   background-size: cover;
   background-position: center;
-  /** padding: 40px 0 200px;  Poner de vuelta cuando vuelva seccion ganadores */
-  padding: 40px 0 90px;
+  padding: 40px 0 200px; 
+  /** padding: 40px 0 90px; esconder al ocultar Ganadores */
   overflow: unset;
 }
 .premios::before {
@@ -497,12 +497,12 @@ ul { list-style: none; }
 }
 .ganadores-arrow-left {
   left: 12%;
-  top: 35%;
+  top: 31%;
   transform: translateY(-60%);
 }
 .ganadores-arrow-right {
   right: 12%;
-  top: 35%;
+  top: 31%;
   transform: translateY(-60%);
 }
 
