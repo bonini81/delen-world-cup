@@ -61,7 +61,7 @@ ul { list-style: none; }
    Ganadores Hide
    ============================================================ */
 
-.brush-divider.ganadores-section, .ganadores.ganadores-section { display: none; }
+/** .brush-divider.ganadores-section, .ganadores.ganadores-section { display: none; } */
 
 
 /* ============================================================
@@ -367,8 +367,8 @@ ul { list-style: none; }
   background-repeat: repeat-x;
   background-size: cover;
   background-position: center;
-  /** padding: 40px 0 200px;  Poner de vuelta cuando vuelva seccion ganadores */
-  padding: 40px 0 90px;
+  padding: 40px 0 200px; 
+  /** padding: 40px 0 90px; esconder al ocultar Ganadores */
   overflow: unset;
 }
 .premios::before {
@@ -404,8 +404,8 @@ ul { list-style: none; }
   pointer-events: none;
 }
 .arrow-deco-tr { top: 15%; right: 13%; width: 160px; }
-/* .arrow-deco-bl { bottom: 19%; left: 14%; width: 130px; } Poner de vuelta al mostrar Ganadores */
-.arrow-deco-bl { bottom: 7%; left: 13%; width: 130px; } 
+.arrow-deco-bl { bottom: 19%; left: 14%; width: 130px; }
+/* .arrow-deco-bl { bottom: 7%; left: 13%; width: 130px; }  Esconder al ocultar Ganadores */
 
 /* Decorative potato – mobile only */
 .premios-papa {
@@ -497,12 +497,12 @@ ul { list-style: none; }
 }
 .ganadores-arrow-left {
   left: 12%;
-  top: 35%;
+  top: 31%;
   transform: translateY(-60%);
 }
 .ganadores-arrow-right {
   right: 12%;
-  top: 35%;
+  top: 31%;
   transform: translateY(-60%);
 }
 
@@ -552,10 +552,10 @@ ul { list-style: none; }
 .winner-city {
   background: #2b2b2b;
   color: var(--white);
-  padding: 10px 0;
+  padding: 10px;
   font-size: 0.85rem;
   font-weight: 700;
-  white-space: nowrap;
+  white-space: wrap;
   width: 90px;
   flex-shrink: 0;
   display: flex;
@@ -919,8 +919,8 @@ ul { list-style: none; }
   .step-image { height: 225px; }
   
   .premios {
-     /** padding: 40px 0 150px;  Poner de vuelta cuando vuelva seccion ganadores */
-    padding: 40px 0 60px;
+    padding: 40px 0 150px;
+    /** padding: 40px 0 60px; esconder al ocultar Ganadores */
   }
 
   .premios-carousel-wrapper {
@@ -941,14 +941,14 @@ ul { list-style: none; }
   }
 
   .arrow-deco-tr {
-  /**  top: 27%; Poner de vuelta cuando vuelva seccion ganadores */
-  top: 30%;
+  top: 27%; 
+  /** top: 30%; esconder al ocultar Ganadores */
   right: 4%;
   width: 80px;
 }
 .arrow-deco-bl {
-  /**   bottom: 23%;  Poner de vuelta cuando vuelva seccion ganadores */
-  bottom: 13%;
+  bottom: 23%;
+  /**  bottom: 13%; esconder al ocultar Ganadores */
   left: 4%;
   width: 80px;
 }
